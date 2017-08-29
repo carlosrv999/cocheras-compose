@@ -10,3 +10,4 @@ Pasos para instalar la app (requisitos: tener Docker y Docker Compose instalados
  - git clone https://gitlab.com/carlosrv999/cocheras-front.git cocheras-front
 4. Ejecutar el proyecto con el comando:
  - docker-compose up (requiere permisos de admin)
+5. Abrir la URL en el navegador: http://localhost
