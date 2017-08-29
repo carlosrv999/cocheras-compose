@@ -1,0 +1,23 @@
+version: '3' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  mongodb: # name of the first service
+    image: mongo # specify image to build container from
+    ports:
+      - "27017:27017" # specify port forewarding
+
+  mongo-seed: # name of the first service
+    build: ./db # specify image to build container from
+    links:
+      - mongodb # specify port forewarding
+
+  express: #name of the second service
+    build: cocheras-lb # specify the directory of the Dockerfile
+    ports:
+      - "3000:3000" #specify ports forewarding
+
+  angular: #name of the third service
+    build: cocheras-front # specify the directory of the Dockerfile
+    ports:
+      - "80:80" #specify ports forewarding
